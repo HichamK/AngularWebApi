@@ -19,7 +19,7 @@ namespace AngularWebApi.Owin
 
             OAuthAuthorizationServerOptions option = new OAuthAuthorizationServerOptions()
             {
-                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(3),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(60),
                 Provider = new OAuthAuthorizationProvider(),
                 TokenEndpointPath = new PathString("/token"),
                 AllowInsecureHttp = true,
