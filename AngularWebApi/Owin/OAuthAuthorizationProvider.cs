@@ -1,6 +1,7 @@
 ﻿using AngularWebApi.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 using System;
 using System.Collections.Generic;
@@ -35,12 +36,32 @@ namespace AngularWebApi.Owin
                 identity.AddClaim(new Claim("Email", user.Email));
                 identity.AddClaim(new Claim("LoggedOn", DateTime.Now.ToString()));
 
-                context.Validated(identity);
+                var props = new AuthenticationProperties(new Dictionary<string, string>
+                {
+                    {
+                        "fullname", string.Format("{0} {1}", user.FirstName, user.LastName)
+                    }
+                });
+
+                var ticket = new AuthenticationTicket(identity, props);
+                context.Validated(ticket);
             }
             else
             {
                 return;
             }
+        }
+
+        public override Task TokenEndpoint(OAuthTokenEndpointContext context)
+        {
+            foreach (KeyValuePair<string, string> property in context.Properties.Dictionary)
+            {
+                //removed .issued and .expires parameter
+                if (!property.Key.StartsWith("."))
+                    context.AdditionalResponseParameters.Add(property.Key, property.Value);
+            }
+
+            return Task.FromResult<object>(null);
         }
     }
 }
