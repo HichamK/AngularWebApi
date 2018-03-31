@@ -76,3 +76,6 @@ C:\Users\VoTrE-BeSt\documents\visual studio 2012\Projects\AngularWebApi\AngularW
 C:\Users\VoTrE-BeSt\documents\visual studio 2012\Projects\AngularWebApi\AngularWebApi\bin\System.Web.Http.Owin.xml
 C:\Users\VoTrE-BeSt\documents\visual studio 2012\Projects\AngularWebApi\AngularWebApi\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\VoTrE-BeSt\documents\visual studio 2012\Projects\AngularWebApi\AngularWebApi\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\VoTrE-BeSt\documents\visual studio 2012\Projects\AngularWebApi\AngularWebApi\obj\Debug\AngularWebApi.csprojResolveAssemblyReference.cache
+C:\Users\VoTrE-BeSt\documents\visual studio 2012\Projects\AngularWebApi\AngularWebApi\bin\Swashbuckle.Core.dll
+C:\Users\VoTrE-BeSt\documents\visual studio 2012\Projects\AngularWebApi\AngularWebApi\bin\WebActivatorEx.dll

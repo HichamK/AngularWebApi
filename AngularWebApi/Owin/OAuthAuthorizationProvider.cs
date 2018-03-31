@@ -35,6 +35,8 @@ namespace AngularWebApi.Owin
                 identity.AddClaim(new Claim("LastName", user.LastName));
                 identity.AddClaim(new Claim("Email", user.Email));
                 identity.AddClaim(new Claim("LoggedOn", DateTime.Now.ToString()));
+                identity.AddClaim(new Claim("Gender", user.Gender));
+                identity.AddClaim(new Claim("Titre", user.Titre));
 
                 var props = new AuthenticationProperties(new Dictionary<string, string>
                 {
